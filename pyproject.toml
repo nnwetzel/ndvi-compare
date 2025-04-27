@@ -1,0 +1,30 @@
+[project]
+name = "satellite_change_service"
+description = "FastAPI backend for satellite NDVI change detection"
+version = "0.0.1"
+requires-python = ">=3.11"
+
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "numpy",
+    "rasterio",
+    "pydantic",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.uv]
+package = true
+
+[project.scripts]
+app = "satellite_change_service.main:main"
+
+[tool.scripts]
+uv = "uvicorn"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.1.0",
+]

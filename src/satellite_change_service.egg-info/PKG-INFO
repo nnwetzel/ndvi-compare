@@ -1,0 +1,10 @@
+Metadata-Version: 2.4
+Name: satellite_change_service
+Version: 0.0.1
+Summary: FastAPI backend for satellite NDVI change detection
+Requires-Python: >=3.11
+Requires-Dist: fastapi
+Requires-Dist: uvicorn
+Requires-Dist: numpy
+Requires-Dist: rasterio
+Requires-Dist: pydantic

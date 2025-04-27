@@ -1,0 +1,2 @@
+[console_scripts]
+app = satellite_change_service.main:main
