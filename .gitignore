@@ -1,0 +1,17 @@
+# Ignore virtual environment
+.venv/
+
+# Python bytecode files
+__pycache__/
+
+# IDE settings
+.vscode/
+
+# Logs
+*.log
+
+# Python egg info
+*.egg-info/
+
+# macOS system files
+.DS_Store
