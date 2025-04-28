@@ -13,13 +13,15 @@ FastAPI backend for detecting changes between satellite imagery.
 
 ## Setup
 
-1. **Bootstrap the environment** (creates `.venv`, installs dependencies):
+**Bootstrap the environment** (creates `.venv`, installs dependencies):
 
    ```bash
    make bootstrap
    ```
 
 ## Running Locally
+
+**Start the application:**
 
    ```bash
    make run
