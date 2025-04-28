@@ -1,24 +1,26 @@
-Prerequisites
-1. Installing uv
-2. Installing Python 3.22
+# Satellite Change Detection Service
 
-1. Install dependencies
-```bash
-uv sync
-```
+FastAPI backend for detecting changes between satellite imagery.
 
-2. Activate Virtual Environment
-```bash
-source .venv/bin/activate
-```
+---
 
-3. Install Pre-Commit Hooks:
-```bash
-pre-commit install
-```
+## Prerequisites
 
-Running Locally
-Run the application:
-```bash
-uv run app
-```
+- Install [`uv`](https://github.com/astral-sh/uv)
+- Install Python 3.12 or 3.22
+
+---
+
+## Setup
+
+1. **Bootstrap the environment** (creates `.venv`, installs dependencies):
+
+   ```bash
+   make bootstrap
+   ```
+
+## Running Locally
+
+    ```bash
+    make run
+    ```
