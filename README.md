@@ -21,6 +21,6 @@ FastAPI backend for detecting changes between satellite imagery.
 
 ## Running Locally
 
-    ```bash
-    make run
-    ```
+   ```bash
+   make run
+   ```
