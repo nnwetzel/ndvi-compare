@@ -12,7 +12,9 @@ dependencies = [
     "pydantic",
     "contextily",
     "geopandas",
-    "shapely"
+    "shapely",
+    "anyio",
+    "rasterio",  # <- ADD THIS!
 ]
 
 [tool.setuptools]

@@ -847,24 +847,28 @@ name = "satellite-change-service"
 version = "0.0.1"
 source = { editable = "." }
 dependencies = [
+    { name = "anyio" },
     { name = "contextily" },
     { name = "fastapi" },
     { name = "geopandas" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pydantic" },
+    { name = "rasterio" },
     { name = "shapely" },
     { name = "uvicorn" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "anyio" },
     { name = "contextily" },
     { name = "fastapi" },
     { name = "geopandas" },
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pydantic" },
+    { name = "rasterio" },
     { name = "shapely" },
     { name = "uvicorn" },
 ]
