@@ -1,6 +1,6 @@
 [project]
-name = "satellite_change_service"
-description = "FastAPI backend for satellite NDVI change detection"
+name = "satellite-change-service"
+description = "FastAPI backend for satellite change detection"
 version = "0.0.1"
 requires-python = ">=3.11"
 
@@ -8,8 +8,11 @@ dependencies = [
     "fastapi",
     "uvicorn",
     "numpy",
-    "rasterio",
+    "matplotlib",
     "pydantic",
+    "contextily",
+    "geopandas",
+    "shapely"
 ]
 
 [tool.setuptools]
@@ -26,5 +29,5 @@ uv = "uvicorn"
 
 [dependency-groups]
 dev = [
-    "pre-commit>=4.1.0",
+   
 ]

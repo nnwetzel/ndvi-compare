@@ -1,57 +1,64 @@
-from fastapi import FastAPI, Query
+import matplotlib
+# Set the backend to Agg to avoid GUI issues
+matplotlib.use('Agg')
+
+from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import List
 import numpy as np
 import rasterio
-from rasterio.enums import Resampling
 from rasterio.transform import from_origin
 import tempfile
 import os
 from fastapi.responses import FileResponse
+import matplotlib.pyplot as plt
+import contextily as ctx  # <-- NEW
+from fastapi.concurrency import run_in_threadpool
 
 app = FastAPI()
 
 class ChangeDetectionRequest(BaseModel):
     bbox: List[float]  # [min_lon, min_lat, max_lon, max_lat]
     date1: str         # ISO format date string
-    date2: str
+    date2: str         # ISO format date string
 
 @app.post("/detect_change/")
 def detect_change(request: ChangeDetectionRequest):
-    # --- For now, create dummy NDVI images instead of real satellite download ---
+    # Coordinates from the request
+    min_lon, min_lat, max_lon, max_lat = request.bbox
 
-    width, height = 256, 256  # Small test image
+    fig, ax = plt.subplots(figsize=(8, 6))
 
-    # Simulate two NDVI arrays
-    np.random.seed(42)
-    ndvi_1 = np.random.uniform(0.2, 0.8, (height, width))
-    ndvi_2 = ndvi_1 + np.random.normal(0, 0.1, (height, width))  # Small change
+    # Plot an empty scatter just to initialize correct bounds
+    ax.set_xlim(min_lon, max_lon)
+    ax.set_ylim(min_lat, max_lat)
 
-    # Compute NDVI difference
-    delta_ndvi = ndvi_2 - ndvi_1
+    # Add basemap (real world imagery) using contextily
+    # contextily expects Web Mercator (EPSG:3857), so we need to reproject
+    import geopandas as gpd
+    from shapely.geometry import box
 
-    # Create binary change map: -0.2 threshold for loss
-    change_map = np.where(delta_ndvi < -0.2, 1, 0).astype(rasterio.uint8)
+    geom = box(min_lon, min_lat, max_lon, max_lat)
+    gdf = gpd.GeoDataFrame(geometry=[geom], crs="EPSG:4326")  # WGS84
+    gdf = gdf.to_crs(epsg=3857)  # Reproject to Web Mercator
 
-    # Create a dummy GeoTIFF to return
+    ax.set_xlim(gdf.total_bounds[[0, 2]])
+    ax.set_ylim(gdf.total_bounds[[1, 3]])
+
+    ctx.add_basemap(ax, crs=gdf.crs.to_string(), source=ctx.providers.OpenStreetMap.Mapnik)  # Or ctx.providers.OpenStreetMap.Mapnik
+
+    # Draw the bounding box itself
+    gdf.boundary.plot(ax=ax, edgecolor='red', linewidth=2)
+
+    ax.set_title("Bounding Box on Real-World Map")
+
+    # Save the figure as a PNG file
     temp_dir = tempfile.mkdtemp()
-    output_path = os.path.join(temp_dir, "change_map.tif")
+    output_path = os.path.join(temp_dir, "bounding_box_map.png")
+    fig.savefig(output_path, bbox_inches='tight')
 
-    transform = from_origin(request.bbox[0], request.bbox[3], 0.0001, 0.0001)
-    with rasterio.open(
-        output_path,
-        'w',
-        driver='GTiff',
-        height=change_map.shape[0],
-        width=change_map.shape[1],
-        count=1,
-        dtype=rasterio.uint8,
-        crs='EPSG:4326',
-        transform=transform,
-    ) as dst:
-        dst.write(change_map, 1)
-
-    return FileResponse(output_path, media_type="image/tiff", filename="change_map.tif")
+    # Return the image file as a response
+    return FileResponse(output_path, media_type="image/png", filename="bounding_box_map.png")
 
 @app.get("/")
 def root():
