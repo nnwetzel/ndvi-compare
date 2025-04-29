@@ -67,7 +67,7 @@ curl -X POST http://127.0.0.1:8000/detect_change/ \
         "bbox": [-121.65, 39.73, -121.55, 39.83],
         "date1": "2019-06-01",
         "date2": "2024-06-01"
-      }
+      }'
 ```
 
 Las Vegas Urban Growth (City expansion into desert)
@@ -75,7 +75,11 @@ Las Vegas Urban Growth (City expansion into desert)
 ```bash
 curl -X POST http://127.0.0.1:8000/detect_change/
    -H "Content-Type: application/json"
--d '{ "bbox": [-115.5, 36.0, -115.0, 36.3], "date1": "2016-06-01", "date2": "2024-06-01" }'
+   -d '{
+        "bbox": [-115.5, 36.0, -115.0, 36.3],
+        "date1": "2016-06-01",
+        "date2": "2024-06-01"
+      }'
 ```
 
 This will download a ```.png``` files containing real satellite imagery for both dates.
