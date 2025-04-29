@@ -78,7 +78,7 @@ curl -X POST http://127.0.0.1:8000/detect_change/
 -d '{ "bbox": [-115.5, 36.0, -115.0, 36.3], "date1": "2016-06-01", "date2": "2024-06-01" }'
 ```
 
-This will download a maps.zip file containing real satellite imagery for both dates.
+This will download a ```.png``` files containing real satellite imagery for both dates.
 
 ## Notes
 - Users must authenticate with their own Google Earth Engine account.
