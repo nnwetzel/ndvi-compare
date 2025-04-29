@@ -49,6 +49,8 @@ nano .env
 ```
 
 Paste the following and update the placeholders:
+
+Copy the ID of your project from: https://console.cloud.google.com/cloud-resource-manager
 ```bash
 GEE_PROJECT_ID=your-google-cloud-project-id
 ```
