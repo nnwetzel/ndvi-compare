@@ -43,16 +43,20 @@ earthengine authenticate
 ```
 
 4. Create a ```.env``` file in the root directory
-```bash
-touch .env
-nano .env
-```
 
-Paste the following and update the placeholders:
+Create the file:
+```touch .env```
 
-Copy the ID of your project from: https://console.cloud.google.com/cloud-resource-manager
+Edit it:
+```nano .env```
+
+Find your Google Cloud Project ID here:
+https://console.cloud.google.com/cloud-resource-manager
+
+Then paste the following into .env, updating ```your-google-cloud-project-id```:
 ```bash
 GEE_PROJECT_ID=your-google-cloud-project-id
+GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 ```
 
 ## Running Locally
@@ -72,8 +76,10 @@ docker build -t geochange-detection-api .
 
 2. Update ```.env```
 
-Paste the following and update the placeholders:
+Find your Google Cloud Project ID here:
+https://console.cloud.google.com/cloud-resource-manager
 
+Then paste the following into .env, updating ```your-google-cloud-project-id```:
 ```bash
 GEE_PROJECT_ID=your-google-cloud-project-id
 GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
