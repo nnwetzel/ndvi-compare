@@ -22,3 +22,4 @@ src/geochange_detection_api/.DS_Store
 
 # Maps
 maps/
+secrets/earthengine-privatekey.json

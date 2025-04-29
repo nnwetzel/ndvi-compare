@@ -1,92 +1,119 @@
 # GeoChange Detection API
-FastAPI backend for detecting changes between satellite imagery using Google Earth Engine.
+FastAPI backend for detecting changes between satellite imagery using Google Earth Engine (GEE).
 
 ## Prerequisites
-- Install uv
-- Install Python 3.11 or 3.12
-- Register for Google Earth Engine access: [Google Earth Engine Registration](https://signup.earthengine.google.com/)
-- Set up a Google Cloud Project (automatically created after Earth Engine signup)
+- Python 3.11 or 3.12
+- uv package manager
+- Google Earth Engine access
+- A Google Cloud Project with the Earth Engine API enabled
 
-Setup
-1. Bootstrap the environment (creates .venv, installs dependencies):
+# Local Setup
+1. Bootstrap environment
 ```bash
 make bootstrap
 ```
 
-2. Activate the virtual environment:
+2. Activate virtual environment
 ```bash
 source .venv/bin/activate
 ```
 
-3. Authenticate with Earth Engine:
+3. Authenticate Earth Engine (for local dev)
 ```bash
 earthengine authenticate
 ```
 
-4. Set your Earth Engine Project ID
-
-Create a ```.env``` file in the root of the project:
+4. Create a ```.env``` file in the root directory
 ```bash
 touch .env
 nano .env
 ```
 
-Add the following line to .env:
+Paste the following and update the placeholders:
 ```bash
 GEE_PROJECT_ID=your-google-cloud-project-id
 ```
 
-(Replace your-google-cloud-project-id with your actual Google Cloud Project ID, like commanding-way-458301-u7.)
-
-## Running Locally
-Start the application:
+# Running Locally
+Start the API server:
 ```bash
 make run
 ```
 
-The server will start on:
-
+Visit:
 http://127.0.0.1:8000
 
-Mato Grosso, Brazil (Amazon deforestation)
+## Docker Usage
+1. Build the image
 ```bash
-curl -X POST http://127.0.0.1:8000/detect_change/ \
-  -H "Content-Type: application/json" \
-  -d '{
-        "bbox": [-55.5, -12.5, -54.5, -11.5],
-        "date1": "2019-06-01",
-        "date2": "2024-06-01"
-      }'
+docker build -t geochange-detection-api .
 ```
 
-Las Vegas Urban Growth (City expansion into desert)
+2. Update .env
+Paste the following and update the placeholders:
 
 ```bash
-curl -X POST http://127.0.0.1:8000/detect_change/ \
-  -H "Content-Type: application/json" \
-  -d '{
-        "bbox": [-115.39, 35.96, -114.90, 36.36],
-        "date1": "2016-06-01",
-        "date2": "2024-06-01"
-      }'
+GEE_PROJECT_ID=your-google-cloud-project-id
+GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 ```
 
-Paradise, California, USA (Wildfire destruction and slow regrowth)
+3. Add your credentials
+Place your downloaded Earth Engine service account key at:
+secrets/earthengine-privatekey.json
 
+4. Run the container
 ```bash
-curl -X POST http://127.0.0.1:8000/detect_change/ \
-  -H "Content-Type: application/json" \
-  -d '{
-        "bbox": [-121.65, 39.73, -121.55, 39.83],
-        "date1": "2019-06-01",
-        "date2": "2024-06-01"
-      }'
+make docker-run
 ```
 
-This will download ```.png``` files containing real satellite imagery for both dates.
+## How to Generate earthengine-privatekey.json
+Step 1: Enable the Earth Engine API
+https://console.cloud.google.com/apis/library/earthengine.googleapis.com
 
-## Notes
-- Users must authenticate with their own Google Earth Engine account.
-- Users must have a Google Cloud project ID tied to their Earth Engine access.
-- The ```.env``` file is used to securely load your project ID without hardcoding.
-- Images are retrieved at 512px resolution in true color (RGB bands: B4, B3, B2).
+Step 2: Create a Service Account
+https://console.cloud.google.com/iam-admin/serviceaccounts
+
+- Click **Create Service Account**
+- Service account name: ```earthengine-access```
+- Click **Create and Continue**
+- Role: **Select a role: Viewer**
+- Click **Done**
+
+Step 3: Download the Key
+- Click on the 3 dots (of the service account you just created)
+- Click **Manage Key → Add Key → Create new key → JSON**
+- Save it as ```secrets/earthengine-privatekey.json```
+
+## Example API Usage
+Amazon Deforestation (Mato Grosso)
+```bash
+curl -X POST http://localhost:8000/detect_change/ \
+-H "Content-Type: application/json" \
+-d '{
+"bbox": [-55.5, -12.5, -54.5, -11.5],
+"date1": "2019-06-01",
+"date2": "2024-06-01"
+}'
+```
+
+Las Vegas Urban Growth
+```bash
+curl -X POST http://localhost:8000/detect_change/ \
+-H "Content-Type: application/json" \
+-d '{
+"bbox": [-115.39, 35.96, -114.90, 36.36],
+"date1": "2016-06-01",
+"date2": "2024-06-01"
+}'
+```
+
+Paradise, CA Wildfire Recovery
+```bash
+curl -X POST http://localhost:8000/detect_change/ \
+-H "Content-Type: application/json" \
+-d '{
+"bbox": [-121.65, 39.73, -121.55, 39.83],
+"date1": "2019-06-01",
+"date2": "2024-06-01"
+}'
+```

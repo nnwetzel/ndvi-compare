@@ -7,7 +7,11 @@ import ee
 app = FastAPI()
 
 # Initialize Earth Engine
-ee.Initialize(project=get_config().GEE_PROJECT_ID)
+service_account = get_config().GEE_PROJECT_ID
+credentials_path = get_config().GEE_CREDENTIALS
+
+credentials = ee.ServiceAccountCredentials(service_account, credentials_path)
+ee.Initialize(credentials)
 
 # Attach routers
 app.include_router(detect_change_router)
