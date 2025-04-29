@@ -49,7 +49,8 @@ http://127.0.0.1:8000
 docker build -t geochange-detection-api .
 ```
 
-2. Update .env
+2. Update ```.env```
+
 Paste the following and update the placeholders:
 
 ```bash
