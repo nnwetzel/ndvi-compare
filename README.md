@@ -45,10 +45,14 @@ earthengine authenticate
 4. Create a ```.env``` file in the root directory
 
 Create the file:
-```touch .env```
+```bash
+touch .env
+```
 
 Edit it:
-```nano .env```
+```bash
+nano .env
+```
 
 Find your Google Cloud Project ID here:
 https://console.cloud.google.com/cloud-resource-manager
