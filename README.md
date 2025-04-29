@@ -4,7 +4,7 @@ FastAPI backend for detecting changes between satellite imagery using Google Ear
 ## Prerequisites
 - Install uv
 - Install Python 3.11 or 3.12
-- Register for Google Earth Engine access
+- Register for Google Earth Engine access: [Google Earth Engine Registration](https://signup.earthengine.google.com/)
 - Set up a Google Cloud Project (automatically created after Earth Engine signup)
 
 Setup
