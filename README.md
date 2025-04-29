@@ -1,4 +1,4 @@
-# Satellite Change Detection Service
+# GeoChange Change Detection API
 FastAPI backend for detecting changes between satellite imagery using Google Earth Engine.
 
 ## Prerequisites

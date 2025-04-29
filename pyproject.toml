@@ -1,6 +1,6 @@
 [project]
-name = "satellite-change-service"
-description = "FastAPI backend for satellite change detection"
+name = "geochange_detection_api"
+description = "FastAPI backend for GeoChange detection"
 version = "0.0.1"
 requires-python = ">=3.11"
 
@@ -28,7 +28,7 @@ package-dir = {"" = "src"}
 package = true
 
 [project.scripts]
-app = "satellite_change_service.main:main"
+app = "geochange_detection_api.main:main"
 
 [tool.scripts]
 uv = "uvicorn"

@@ -89,10 +89,10 @@ async def detect_change(request: ChangeDetectionRequest):
 
 @app.get("/")
 def root():
-    return {"message": "Satellite Change Detection API Ready"}
+    return {"message": "GeoChange Detection API Ready"}
 
 def main():
-    uvicorn.run("satellite_change_service.main:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("geochange_detection_api.main:app", host="127.0.0.1", port=8000, reload=True)
 
 if __name__ == "__main__":
     main()
