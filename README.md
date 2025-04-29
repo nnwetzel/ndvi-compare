@@ -25,10 +25,9 @@ earthengine authenticate
 
 4. Set your Earth Engine Project ID
 
-Create a ```.env``` file and edit it in the root of the project:
+Create a .env file in the root of the project:
 ```bash
 touch .env
-nano .env
 ```
 
 Add the following line to .env:
@@ -59,6 +58,18 @@ curl -X POST http://127.0.0.1:8000/detect_change/ \
       }'
 ```
 
+Las Vegas Urban Growth (City expansion into desert)
+
+```bash
+curl -X POST http://127.0.0.1:8000/detect_change/ \
+  -H "Content-Type: application/json" \
+  -d '{
+        "bbox": [-115.39, 35.96, -114.90, 36.36],
+        "date1": "2016-06-01",
+        "date2": "2024-06-01"
+      }'
+```
+
 Paradise, California, USA (Wildfire destruction and slow regrowth)
 
 ```bash
@@ -67,18 +78,6 @@ curl -X POST http://127.0.0.1:8000/detect_change/ \
   -d '{
         "bbox": [-121.65, 39.73, -121.55, 39.83],
         "date1": "2019-06-01",
-        "date2": "2024-06-01"
-      }'
-```
-
-Las Vegas Urban Growth (City expansion into desert)
-
-```bash
-curl -X POST http://127.0.0.1:8000/detect_change/ \
-  -H "Content-Type: application/json" \
-  -d '{
-        "bbox": [-115.5, 36.0, -115.0, 36.3],
-        "date1": "2016-06-01",
         "date2": "2024-06-01"
       }'
 ```
