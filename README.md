@@ -27,22 +27,22 @@ https://console.cloud.google.com/apis/library/earthengine.googleapis.com
 - Make sure the correct project is selected when enabling the API.
 
 ## Local Setup
-1. Bootstrap environment
+**1. Bootstrap environment**
 ```bash
 make bootstrap
 ```
 
-2. Activate virtual environment
+**2. Activate virtual environment**
 ```bash#
 source .venv/bin/activate
 ```
 
-3. Authenticate Earth Engine (for local dev)
+**3. Authenticate Earth Engine (for local dev)**
 ```bash
 earthengine authenticate
 ```
 
-4. Create a ```.env``` file in the root directory
+**4. Create a ```.env``` file in the root directory**
 
 Create the file:
 ```bash
@@ -73,12 +73,12 @@ Visit:
 http://127.0.0.1:8000
 
 ## Docker Usage
-1. Build the image
+**1. Build the image**
 ```bash
 docker build -t geochange-detection-api .
 ```
 
-2. Update ```.env```
+**2. Update ```.env```**
 
 Find your Google Cloud Project ID here:
 https://console.cloud.google.com/cloud-resource-manager
@@ -89,12 +89,12 @@ GEE_PROJECT_ID=your-google-cloud-project-id
 GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 ```
 
-3. Add your credentials
+**3. Add your credentials**
 
 Place your downloaded Earth Engine service account key at:
 secrets/earthengine-privatekey.json
 
-4. Run the container
+**4. Run the container**
 ```bash
 make docker-run
 ```
