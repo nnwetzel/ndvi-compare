@@ -94,7 +94,7 @@ GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 Place your downloaded Earth Engine service account key at:
 secrets/earthengine-privatekey.json
 
-5. Run the container
+4. Run the container
 ```bash
 make docker-run
 ```
