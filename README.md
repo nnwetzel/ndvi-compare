@@ -92,7 +92,7 @@ GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 **3. Add your credentials**
 
 Place your downloaded Earth Engine service account key at:
-secrets/earthengine-privatekey.json
+```secrets/earthengine-privatekey.json```
 
 **4. Run the container**
 ```bash
