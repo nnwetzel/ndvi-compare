@@ -14,7 +14,11 @@ dependencies = [
     "geopandas",
     "shapely",
     "anyio",
-    "rasterio",  # <- ADD THIS!
+    "rasterio",
+    "numpy",
+    "earthengine-api",
+    "datetime",
+    "python-dotenv",
 ]
 
 [tool.setuptools]

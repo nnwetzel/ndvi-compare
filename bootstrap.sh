@@ -20,5 +20,5 @@ source .venv/bin/activate
 echo ""
 echo "🚀 Setup complete! You can now run:"
 echo ""
-echo "    uv run app"
+echo "    make run"
 echo ""
