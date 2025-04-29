@@ -82,7 +82,7 @@ curl -X POST http://127.0.0.1:8000/detect_change/
       }'
 ```
 
-This will download a ```.png``` files containing real satellite imagery for both dates.
+This will download ```.png``` files containing real satellite imagery for both dates.
 
 ## Notes
 - Users must authenticate with their own Google Earth Engine account.
