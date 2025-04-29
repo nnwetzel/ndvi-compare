@@ -25,9 +25,10 @@ earthengine authenticate
 
 4. Set your Earth Engine Project ID
 
-Create a .env file in the root of the project:
+Create a ```.env``` file in the root of the project:
 ```bash
 touch .env
+nano .env
 ```
 
 Add the following line to .env:
