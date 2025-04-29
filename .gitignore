@@ -19,7 +19,5 @@ __pycache__/
 # Environment variables file
 .env
 
-# Maps response JSON
-maps_response.json
-
+# Maps
 maps/
