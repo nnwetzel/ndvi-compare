@@ -2,10 +2,29 @@
 FastAPI backend for detecting changes between satellite imagery using Google Earth Engine (GEE).
 
 ## Prerequisites
-- Python 3.11 or 3.12
-- uv package manager
-- Google Earth Engine access
-- A Google Cloud Project with the Earth Engine API enabled
+1. uv
+
+Install from:
+https://docs.astral.sh/uv/getting-started/installation/
+
+2. Python 3.11
+
+Install using:
+```bash
+uv python install 3.11
+```
+
+3. Google Earth Engine access
+- Register for access:
+https://signup.earthengine.google.com/
+- During signup, select noncommercial use unless you are working on a commercial application.
+- After approval, create a Google Cloud Project linked to your Earth Engine account at:
+https://console.cloud.google.com/cloud-resource-manager
+
+4. Google Cloud Project with Earth Engine API enabled
+- Enable the Earth Engine API here:
+https://console.cloud.google.com/apis/library/earthengine.googleapis.com
+- Make sure the correct project is selected when enabling the API.
 
 ## Local Setup
 1. Bootstrap environment
@@ -59,30 +78,31 @@ GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 ```
 
 3. Add your credentials
+
 Place your downloaded Earth Engine service account key at:
 secrets/earthengine-privatekey.json
 
-4. Run the container
+5. Run the container
 ```bash
 make docker-run
 ```
 
 ## How to Generate earthengine-privatekey.json
-Step 1: Enable the Earth Engine API
-https://console.cloud.google.com/apis/library/earthengine.googleapis.com
-
-Step 2: Create a Service Account
+Step 1: Create a Service Account
 https://console.cloud.google.com/iam-admin/serviceaccounts
 
+- Select your project
 - Click **Create Service Account**
 - Service account name: ```earthengine-access```
 - Click **Create and Continue**
-- Role: **Select a role: Viewer**
+- Click **Select a role → Viewer**
 - Click **Done**
 
-Step 3: Download the Key
-- Click on the 3 dots (of the service account you just created)
-- Click **Manage Key → Add Key → Create new key → JSON**
+Step 2: Download the Key
+https://console.cloud.google.com/iam-admin/serviceaccounts
+
+- Select your project
+- Click on **⋮ (of the service account) → Manage Key → Add Key → Create new key → JSON**
 - Save it as ```secrets/earthengine-privatekey.json```
 
 ## Example API Usage
