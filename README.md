@@ -7,14 +7,14 @@ FastAPI backend for detecting changes between satellite imagery using Google Ear
 - Google Earth Engine access
 - A Google Cloud Project with the Earth Engine API enabled
 
-# Local Setup
+## Local Setup
 1. Bootstrap environment
 ```bash
 make bootstrap
 ```
 
 2. Activate virtual environment
-```bash
+```bash#
 source .venv/bin/activate
 ```
 
@@ -34,7 +34,7 @@ Paste the following and update the placeholders:
 GEE_PROJECT_ID=your-google-cloud-project-id
 ```
 
-# Running Locally
+## Running Locally
 Start the API server:
 ```bash
 make run
