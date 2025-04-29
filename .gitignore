@@ -15,6 +15,7 @@ __pycache__/
 
 # macOS system files
 .DS_Store
+src/satellite_change_service/.DS_Store
 
 # Environment variables file
 .env
