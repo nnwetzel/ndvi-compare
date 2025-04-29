@@ -2,26 +2,26 @@
 FastAPI backend for detecting changes between satellite imagery using Google Earth Engine (GEE).
 
 ## Prerequisites
-1. uv
+**1. uv**
 
 Install from:
 https://docs.astral.sh/uv/getting-started/installation/
 
-2. Python 3.11
+**2. Python 3.11**
 
 Install using:
 ```bash
 uv python install 3.11
 ```
 
-3. Google Earth Engine access
+**3. Google Earth Engine access**
 - Register for access:
 https://signup.earthengine.google.com/
 - During signup, select noncommercial use unless you are working on a commercial application.
 - After approval, create a Google Cloud Project linked to your Earth Engine account at:
 https://console.cloud.google.com/cloud-resource-manager
 
-4. Google Cloud Project with Earth Engine API enabled
+**4. Google Cloud Project with Earth Engine API enabled**
 - Enable the Earth Engine API here:
 https://console.cloud.google.com/apis/library/earthengine.googleapis.com
 - Make sure the correct project is selected when enabling the API.
@@ -100,22 +100,27 @@ make docker-run
 ```
 
 ## How to Generate earthengine-privatekey.json
-Step 1: Create a Service Account
+
+**Step 1: Create a Service Account**
+
+Go to:
 https://console.cloud.google.com/iam-admin/serviceaccounts
+	•	Select your project (the one linked to Earth Engine)
+	•	Click **Create Service Account**
+	•	Service account name: ```earthengine-access```
+	•	Click **Create and Continue**
+	•	Click **Select a role → choose Viewer**
+	•	Click **Done**
 
-- Select your project
-- Click **Create Service Account**
-- Service account name: ```earthengine-access```
-- Click **Create and Continue**
-- Click **Select a role → Viewer**
-- Click **Done**
+**Step 2: Download the Service Account Key**
 
-Step 2: Download the Key
+Still on:
 https://console.cloud.google.com/iam-admin/serviceaccounts
-
-- Select your project
-- Click on **⋮ (of the service account) → Manage Key → Add Key → Create new key → JSON**
-- Save it as ```secrets/earthengine-privatekey.json```
+	•	Select your project
+	•	Find your service account (earthengine-access)
+	•	Click the **⋮ (three dots) → Manage keys**
+	•	Click **Add Key → Create new key → select JSON**
+	•	Save the file as: ```secrets/earthengine-privatekey.json```
 
 ## Example API Usage
 Amazon Deforestation (Mato Grosso)
