@@ -105,22 +105,22 @@ make docker-run
 
 Go to:
 https://console.cloud.google.com/iam-admin/serviceaccounts
-	•	Select your project (the one linked to Earth Engine)
-	•	Click **Create Service Account**
-	•	Service account name: ```earthengine-access```
-	•	Click **Create and Continue**
-	•	Click **Select a role → choose Viewer**
-	•	Click **Done**
+- Select your project (the one linked to Earth Engine)
+- Click **Create Service Account**
+- Service account name: ```earthengine-access```
+- Click **Create and Continue**
+- Click **Select a role → choose Viewer**
+- Click **Done**
 
 **Step 2: Download the Service Account Key**
 
 Still on:
 https://console.cloud.google.com/iam-admin/serviceaccounts
-	•	Select your project
-	•	Find your service account (earthengine-access)
-	•	Click the **⋮ (three dots) → Manage keys**
-	•	Click **Add Key → Create new key → select JSON**
-	•	Save the file as: ```secrets/earthengine-privatekey.json```
+- Select your project
+- Find your service account (earthengine-access)
+- Click the **⋮ (three dots) → Manage keys**
+- Click **Add Key → Create new key → select JSON**
+- Save the file as: ```secrets/earthengine-privatekey.json```
 
 ## Example API Usage
 Amazon Deforestation (Mato Grosso)
