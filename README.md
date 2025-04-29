@@ -74,9 +74,9 @@ curl -X POST http://127.0.0.1:8000/detect_change/ \
 Las Vegas Urban Growth (City expansion into desert)
 
 ```bash
-curl -X POST http://127.0.0.1:8000/detect_change/
-   -H "Content-Type: application/json"
-   -d '{
+curl -X POST http://127.0.0.1:8000/detect_change/ \
+  -H "Content-Type: application/json" \
+  -d '{
         "bbox": [-115.5, 36.0, -115.0, 36.3],
         "date1": "2016-06-01",
         "date2": "2024-06-01"
