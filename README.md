@@ -57,7 +57,7 @@ nano .env
 Find your Google Cloud Project ID here:
 https://console.cloud.google.com/cloud-resource-manager
 
-Then paste the following into .env, updating ```your-google-cloud-project-id```:
+Then paste the following into ```.env```, updating ```your-google-cloud-project-id```:
 ```bash
 GEE_PROJECT_ID=your-google-cloud-project-id
 GEE_CREDENTIALS=secrets/earthengine-privatekey.json
