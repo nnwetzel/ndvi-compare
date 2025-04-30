@@ -88,6 +88,7 @@ touch .env
 Edit it:
 ```bash
 nano .env
+```
 
 Find your Google Cloud Project ID here:
 https://console.cloud.google.com/cloud-resource-manager
