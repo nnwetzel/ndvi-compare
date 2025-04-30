@@ -101,9 +101,9 @@ GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 
 **3. Add your credentials**
 
-Refer to:
+To complete this set:
 
-[How to Generate ```earthengine-privatekey.son```](https://github.com/nnwetzel/geochange-detection-api?tab=readme-ov-file#how-to-generate-earthengine-privatekeyjson)
+[How to Generate earthengine-privatekey.son](https://github.com/nnwetzel/geochange-detection-api?tab=readme-ov-file#how-to-generate-earthengine-privatekeyjson)
 
 Place your downloaded Earth Engine service account key at:
 ```secrets/earthengine-privatekey.json```
