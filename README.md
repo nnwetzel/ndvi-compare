@@ -78,7 +78,7 @@ http://127.0.0.1:8000
 docker build -t geochange-detection-api .
 ```
 
-**4. Create a ```.env``` file in the root directory**
+**2. Create a ```.env``` file in the root directory**
 
 Create the file:
 ```bash
