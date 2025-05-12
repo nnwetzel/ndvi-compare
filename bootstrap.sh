@@ -14,7 +14,7 @@ export UV_FORCE_SYSTEM_PYTHON=1
 echo "Installing project dependencies and dev tools..."
 uv sync --group dev
 
-echo "⚡ Activating virtual environment..."
+echo "Activating virtual environment..."
 source .venv/bin/activate
 
 echo ""
