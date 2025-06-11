@@ -1,6 +1,6 @@
 [project]
-name = "geochange_detection_api"
-description = "FastAPI backend for GeoChange detection"
+name = "ndvi_compare"
+description = "FastAPI backend for NDVI comparison"
 version = "0.0.1"
 requires-python = ">=3.11"
 
@@ -28,7 +28,7 @@ package-dir = {"" = "src"}
 package = true
 
 [project.scripts]
-app = "geochange_detection_api.main:main"
+app = "ndvi_compare.main:main"
 
 [tool.scripts]
 uv = "uvicorn"

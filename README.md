@@ -1,5 +1,5 @@
-# GeoChange Detection API 
-FastAPI backend for detecting changes between satellite imagery using Google Earth Engine (GEE).
+# NDVI Compare
+FastAPI backend for detecting vegetation change via NDVI (Normalized Difference Vegetation Index) using Google Earth Engine.
 
 ## Prerequisites
 **1. uv**
@@ -75,7 +75,7 @@ http://127.0.0.1:8000
 ## Docker Usage
 **1. Build the image**
 ```bash
-docker build -t geochange-detection-api .
+docker build -t ndvi-compare .
 ```
 
 **2. Create a ```.env``` file in the root directory**
@@ -103,7 +103,7 @@ GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 
 To complete this set:
 
-[How to Generate earthengine-privatekey.son](https://github.com/nnwetzel/geochange-detection-api?tab=readme-ov-file#how-to-generate-earthengine-privatekeyjson)
+[How to Generate earthengine-privatekey.son](https://github.com/nnwetzel/ndvi-compare?tab=readme-ov-file#how-to-generate-earthengine-privatekeyjson)
 
 Place your downloaded Earth Engine service account key at:
 ```secrets/earthengine-privatekey.json```

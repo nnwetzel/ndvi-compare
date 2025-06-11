@@ -41,4 +41,4 @@ ENV PATH="/app/.venv/bin:/python/cpython-3.11.11-linux-x86_64-gnu/bin:$PATH"
 
 USER app
 
-CMD ["/app/.venv/bin/uvicorn", "src.geochange_detection_api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["/app/.venv/bin/uvicorn", "src.ndvi_compare.main:app", "--host", "0.0.0.0", "--port", "8000"]

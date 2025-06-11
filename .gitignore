@@ -15,7 +15,7 @@ __pycache__/
 
 # macOS system files
 .DS_Store
-src/geochange_detection_api/.DS_Store
+src/ndvi_comparei/.DS_Store
 
 # Environment variables file
 .env

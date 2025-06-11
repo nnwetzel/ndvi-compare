@@ -11,4 +11,4 @@ docker-run:
 	  --env-file .env \
 	  -v $(CURDIR)/secrets:/app/secrets \
 	  -v $(CURDIR)/maps:/app/maps \
-	  geochange-detection-api
+	  ndvi_compare

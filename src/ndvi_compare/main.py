@@ -1,6 +1,8 @@
 from fastapi import FastAPI
-from geochange_detection_api.api.endpoints import detect_change_router
-from geochange_detection_api.util.config import get_config
+from ndvi_compare.api.endpoints import detect_change_router
+from ndvi_compare.util.config import get_config
+from ndvi_compare.services.download import download_ndvi_difference
+from typing import List
 import uvicorn
 import ee
 
@@ -18,7 +20,7 @@ app.include_router(detect_change_router)
 
 @app.get("/")
 def root():
-    return {"message": "GeoChange Detection API Ready"}
+    return {"message": "NDVI Compare Ready"}
 
 @app.get("/health")
 def health_check():
@@ -29,7 +31,7 @@ def health_check():
         return {"status": "unhealthy", "error": str(e)}
 
 def main():
-    uvicorn.run("geochange_detection_api.main:app", host=get_config().HOST, port=get_config().PORT, reload=True)
+    uvicorn.run("ndvi_compare.main:app", host=get_config().HOST, port=get_config().PORT, reload=True)
 
 if __name__ == "__main__":
     main()

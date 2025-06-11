@@ -319,7 +319,7 @@ wheels = [
 ]
 
 [[package]]
-name = "geochange-detection-api"
+name = "ndvi-compare"
 version = "0.0.1"
 source = { editable = "." }
 dependencies = [
