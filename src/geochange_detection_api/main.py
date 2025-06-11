@@ -20,6 +20,14 @@ app.include_router(detect_change_router)
 def root():
     return {"message": "GeoChange Detection API Ready"}
 
+@app.get("/health")
+def health_check():
+    try:
+        ee.Initialize()
+        return {"status": "healthy"}
+    except Exception as e:
+        return {"status": "unhealthy", "error": str(e)}
+
 def main():
     uvicorn.run("geochange_detection_api.main:app", host=get_config().HOST, port=get_config().PORT, reload=True)
 
