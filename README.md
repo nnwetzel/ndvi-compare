@@ -22,7 +22,7 @@ FastAPI backend for detecting vegetation change via NDVI (Normalized Difference 
   
 ![ndvi_diff](https://github.com/user-attachments/assets/40e37515-a473-4f2d-b3c0-80822dae3be7)
 
-See the Example Usage section for the command that generates these images.
+See the [Example Usage](https://github.com/nnwetzel/ndvi-compare?tab=readme-ov-file#example-usage-1) section for the command that generates these images.
 
 ## Prerequisites
 **1. uv**
