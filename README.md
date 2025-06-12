@@ -136,7 +136,7 @@ https://console.cloud.google.com/iam-admin/serviceaccounts
 - Click **Add Key → Create new key → select JSON**
 - Save the file as: ```secrets/earthengine-privatekey.json```
 
-## Example API Usage
+## Example Usage
 Amazon Deforestation (Mato Grosso)
 ```bash
 curl -X POST http://localhost:8000/detect_change/ \
@@ -148,14 +148,14 @@ curl -X POST http://localhost:8000/detect_change/ \
 }'
 ```
 
-Las Vegas Urban Growth
+Gaza Strip
 ```bash
 curl -X POST http://localhost:8000/detect_change/ \
 -H "Content-Type: application/json" \
 -d '{
-"bbox": [-115.39, 35.96, -114.90, 36.36],
-"date1": "2016-06-01",
-"date2": "2024-06-01"
+  "bbox": [34.2, 31.2, 34.6, 31.6],
+  "date1": "2020-06-01",
+  "date2": "2025-06-01"
 }'
 ```
 
@@ -164,8 +164,31 @@ Paradise, CA Wildfire Recovery
 curl -X POST http://localhost:8000/detect_change/ \
 -H "Content-Type: application/json" \
 -d '{
-"bbox": [-121.65, 39.73, -121.55, 39.83],
-"date1": "2019-06-01",
-"date2": "2024-06-01"
+  "bbox": [-121.65, 39.73, -121.55, 39.83],
+  "date1": "2019-06-01",
+  "date2": "2025-06-01"
 }'
 ```
+
+Iowa Argicultural Cycle
+```bash
+curl -X POST http://localhost:8000/detect_change/ \
+-H "Content-Type: application/json" \
+-d '{
+  "bbox": [-93.75, 41.5, -93.25, 42.0],
+  "date1": "2023-04-01",
+  "date2": "2023-08-01"
+}'
+```
+
+Serengeti Wet-to-Dry Season
+```bash
+curl -X POST http://localhost:8000/detect_change/ \
+-H "Content-Type: application/json" \
+-d '{
+  "bbox": [34.5, -2.8, 35.0, -2.4],
+  "date1": "2023-01-01",
+  "date2": "2023-06-01"
+}'
+```
+
