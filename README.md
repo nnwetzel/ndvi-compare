@@ -124,9 +124,7 @@ GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
 
 **3. Add your credentials**
 
-To complete this set:
-
-[How to Generate earthengine-privatekey.son](https://github.com/nnwetzel/ndvi-compare?tab=readme-ov-file#how-to-generate-earthengine-privatekeyjson)
+See [How to Generate earthengine-privatekey.son](https://github.com/nnwetzel/ndvi-compare?tab=readme-ov-file#how-to-generate-earthengine-privatekeyjson) to complete this step.
 
 Place your downloaded Earth Engine service account key at:
 ```secrets/earthengine-privatekey.json```
