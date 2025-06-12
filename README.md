@@ -202,14 +202,14 @@ curl -X POST http://localhost:8000/detect_change/ \
 }'
 ```
 
-Serengeti Wet-to-Dry Season
+Phoenix Urban Heat Island Expansion
 ```bash
 curl -X POST http://localhost:8000/detect_change/ \
 -H "Content-Type: application/json" \
 -d '{
-  "bbox": [34.5, -2.8, 35.0, -2.4],
-  "date1": "2023-01-01",
-  "date2": "2023-06-01"
+  "bbox": [-112.4, 33.2, -111.8, 33.7],
+  "date1": "2020-06-01",
+  "date2": "2024-06-01"
 }'
 ```
 
