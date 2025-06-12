@@ -11,14 +11,16 @@ FastAPI backend for detecting vegetation change via NDVI (Normalized Difference 
 **Amazon Deforestation (Mato Grosso)**
 
 - June 1, 2019
+  
 ![map_date1](https://github.com/user-attachments/assets/de809047-76df-4221-86bd-6557efb02a7f)
 
 - June 1, 2024
+  
 ![map_date2](https://github.com/user-attachments/assets/60489cb8-636a-44b0-99e1-af5fffef1ea5)
 
-- Change Map (2024 vs 2919)
+- Change Map (2024 vs 2019)
+  
 ![ndvi_diff](https://github.com/user-attachments/assets/40e37515-a473-4f2d-b3c0-80822dae3be7)
-
 
 See the Example Usage section for the command that generates these images.
 
