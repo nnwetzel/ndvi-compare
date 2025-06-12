@@ -6,7 +6,7 @@ FastAPI backend for detecting vegetation change via NDVI (Normalized Difference 
 - Red - Vegetation loss or decline
 - White - No significant change or missing data
 
-# Example Usage
+## Example Usage
 
 **Amazon Deforestation (Mato Grosso)**
 
