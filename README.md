@@ -169,7 +169,7 @@ curl -X POST http://localhost:8000/detect_change/ \
 }'
 ```
 
-Gaza Strip
+Conflict Impact on Vegetation (Gaza Strip)
 ```bash
 curl -X POST http://localhost:8000/detect_change/ \
 -H "Content-Type: application/json" \
@@ -180,7 +180,7 @@ curl -X POST http://localhost:8000/detect_change/ \
 }'
 ```
 
-Paradise, CA Wildfire Recovery
+Wildfire Recovery (Paradise, California)
 ```bash
 curl -X POST http://localhost:8000/detect_change/ \
 -H "Content-Type: application/json" \
@@ -191,7 +191,7 @@ curl -X POST http://localhost:8000/detect_change/ \
 }'
 ```
 
-Iowa Argicultural Cycle
+Crop Seasonality (Iowa Farmland)
 ```bash
 curl -X POST http://localhost:8000/detect_change/ \
 -H "Content-Type: application/json" \
@@ -202,7 +202,7 @@ curl -X POST http://localhost:8000/detect_change/ \
 }'
 ```
 
-Phoenix Urban Heat Island Expansion
+Urban Expansion Effects (Phoenix, Arizona)
 ```bash
 curl -X POST http://localhost:8000/detect_change/ \
 -H "Content-Type: application/json" \
@@ -212,4 +212,16 @@ curl -X POST http://localhost:8000/detect_change/ \
   "date2": "2024-06-01"
 }'
 ```
+
+Forest Conservation (Cát Tiên National Park, Vietnam)
+```bash
+curl -X POST http://localhost:8000/detect_change/ \
+-H "Content-Type: application/json" \
+-d '{
+  "bbox": [107.25, 11.35, 107.45, 11.55],
+  "date1": "2020-01-10",
+  "date2": "2024-01-10"
+}'
+```
+
 
