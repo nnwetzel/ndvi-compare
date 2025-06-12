@@ -1,6 +1,23 @@
 # NDVI Compare
 FastAPI backend for detecting vegetation change via NDVI (Normalized Difference Vegetation Index) using Google Earth Engine.
 
+Color Legend
+- Green - Healthy or increased vegetation
+- Red - Vegetation loss or decline
+- White - No significant change or missing data
+
+# Example Usage
+
+Amazon Deforestation (Mato Grosso)
+
+- June 1, 2019
+
+- June 1, 2024
+
+- Change Map (2024 vs 2919)
+
+See the Example Usage section for the command that generates these images.
+
 ## Prerequisites
 **1. uv**
 
@@ -93,7 +110,7 @@ nano .env
 Find your Google Cloud Project ID here:
 https://console.cloud.google.com/cloud-resource-manager
 
-Then paste the following into .env, updating ```your-google-cloud-project-id```:
+Then paste the following into ```.env```, updating ```your-google-cloud-project-id```:
 ```bash
 GEE_PROJECT_ID=your-google-cloud-project-id
 GEE_CREDENTIALS=/app/secrets/earthengine-privatekey.json
