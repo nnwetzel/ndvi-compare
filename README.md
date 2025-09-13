@@ -50,24 +50,22 @@ https://console.cloud.google.com/apis/library/earthengine.googleapis.com
 - Make sure the correct project is selected when enabling the API.
 
 ## Docker Usage
-**1. Build the image**
+**1. Clone the repo and build the image**
 ```bash
+git clone https://github.com/nnwetzel/ndvi-compare.git
+cd ndvi-compare
 docker build -t ndvi-compare .
 ```
 
 **2. Create a ```.env``` file in the root directory**
 
-Create the file:
+Create and edit the file:
 ```bash
 touch .env
-```
-
-Edit it:
-```bash
 nano .env
 ```
 
-Find your Google Cloud Project ID here:
+Create a Google Cloud Project or find your Project ID here:
 https://console.cloud.google.com/cloud-resource-manager
 
 Then paste the following into ```.env```, updating ```your-google-cloud-project-id```:
