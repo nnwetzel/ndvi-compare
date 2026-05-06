@@ -20,6 +20,10 @@ src/ndvi_comparei/.DS_Store
 # Environment variables file
 .env
 
+# Caching
+cache_data/
+
 # Maps
 maps/
+maps/*.png
 secrets/earthengine-privatekey.json
