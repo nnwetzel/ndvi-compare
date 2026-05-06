@@ -11,4 +11,5 @@ docker-run:
 	  --env-file .env \
 	  -v $(CURDIR)/secrets:/app/secrets \
 	  -v $(CURDIR)/maps:/app/maps \
+	  -v $(CURDIR)/cache_data:/tmp/ndvi_cache \
 	  ndvi_compare

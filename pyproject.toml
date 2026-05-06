@@ -19,6 +19,7 @@ dependencies = [
     "earthengine-api",
     "datetime",
     "python-dotenv",
+    "diskcache",
 ]
 
 [tool.setuptools]
